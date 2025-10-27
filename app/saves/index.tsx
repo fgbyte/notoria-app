@@ -1,11 +1,9 @@
 import { Text, View } from 'react-native'
 
-const Page = () => {
+export default function SavesPage() {
 	return (
 		<View>
-			<Text>Page</Text>
+			<Text>Saves</Text>
 		</View>
 	)
 }
-
-export default Page
