@@ -10,10 +10,11 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "dev": "EXPO_NO_TELEMETRY=1 expo start",
+    "expo-check": "bun expo install --check",
+    "prebuild": "bunx expo prebuild --clean",
     "build-android-dev": "APP_VARIANT=development eas build --platform android --profile development --clear-cache",
     "build-android-prev": "APP_VARIANT=preview eas build --platform android --profile preview",
-    "build-android-prod": "eas build --platform android --profile production",
-    "expo-check": "bun expo install --check"
+    "build-android-prod": "eas build --platform android --profile production"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
