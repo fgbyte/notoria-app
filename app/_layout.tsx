@@ -1,5 +1,6 @@
 import { Stack } from 'expo-router'
 import { Text, View } from 'react-native'
+import { KeyboardProvider } from 'react-native-keyboard-controller'
 
 const Layout = () => {
 	return (
@@ -10,4 +11,12 @@ const Layout = () => {
 	)
 }
 
-export default Layout
+const RootLayout = () => {
+	return (
+		<KeyboardProvider>
+			<Layout />
+		</KeyboardProvider>
+	)
+}
+
+export default RootLayout

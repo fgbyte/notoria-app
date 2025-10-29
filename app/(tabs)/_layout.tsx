@@ -7,7 +7,7 @@ import {
 } from 'expo-router/unstable-native-tabs'
 import { COLORS } from '@/utils/Colors'
 
-export default function RootLayout() {
+const Layout = () => {
 	return (
 		<NativeTabs
 			backgroundColor={COLORS.itemBackground}
@@ -30,3 +30,5 @@ export default function RootLayout() {
 		</NativeTabs>
 	)
 }
+
+export default Layout
