@@ -36,7 +36,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
 	version: '1.0.0', //👈 version control
 	orientation: 'portrait',
 	icon: './assets/images/icon.png',
-	scheme: 'ltstarter',
+	scheme: 'notoria',
 	userInterfaceStyle: 'light',
 	runtimeVersion: {
 		policy: 'appVersion',
@@ -63,11 +63,10 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
 		output: 'static',
 		favicon: './assets/images/favicon.png', //path
 	},
-	plugins: [
-		'expo-router',
-		IS_DEV || IS_PREVIEW ? ['expo-dev-client'] : [], // Solo incluye en dev/preview
-		//other plugins here...
-	],
+	plugins:
+		IS_DEV || IS_PREVIEW
+			? ['expo-router', ['expo-dev-client']]
+			: ['expo-router'],
 	experiments: {
 		typedRoutes: true,
 		reactCompiler: true,
