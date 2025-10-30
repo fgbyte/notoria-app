@@ -29,7 +29,14 @@ const getAppName = () => {
 }
 
 const getPlugins = (): ExpoConfig['plugins'] => {
-	const plugins: ExpoConfig['plugins'] = ['expo-router'] //add more plugins here for production purposes
+	const plugins: ExpoConfig['plugins'] = [
+		['expo-router'],
+		['expo-splash-screen'],
+		'expo-font',
+		['expo-dynamic-app-icon'],
+		'expo-web-browser',
+		'expo-sqlite',
+	] //add more plugins here for production purposes
 	if (IS_DEV || IS_PREVIEW) {
 		plugins.push(['expo-dev-client']) //add more plugins here for dev purposes
 	}
