@@ -28,6 +28,14 @@ const getAppName = () => {
 	return `${APP_NAME}`
 }
 
+const getPlugins = (): ExpoConfig['plugins'] => {
+	const plugins: ExpoConfig['plugins'] = ['expo-router'] //add more plugins here for production purposes
+	if (IS_DEV || IS_PREVIEW) {
+		plugins.push(['expo-dev-client']) //add more plugins here for dev purposes
+	}
+	return plugins
+}
+
 export default ({ config }: ConfigContext): ExpoConfig => ({
 	...config,
 	name: getAppName(),
@@ -63,10 +71,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
 		output: 'static',
 		favicon: './assets/images/favicon.png', //path
 	},
-	plugins:
-		IS_DEV || IS_PREVIEW
-			? ['expo-router', ['expo-dev-client']]
-			: ['expo-router'],
+	plugins: getPlugins(),
 	experiments: {
 		typedRoutes: true,
 		reactCompiler: true,
