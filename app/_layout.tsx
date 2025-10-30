@@ -1,3 +1,5 @@
+import { ClerkProvider } from '@clerk/clerk-expo'
+import { tokenCache } from '@clerk/clerk-expo/token-cache'
 import { Stack } from 'expo-router'
 import { Text, View } from 'react-native'
 import { KeyboardProvider } from 'react-native-keyboard-controller'
@@ -13,9 +15,11 @@ const Layout = () => {
 
 const RootLayout = () => {
 	return (
-		<KeyboardProvider>
-			<Layout />
-		</KeyboardProvider>
+		<ClerkProvider tokenCache={tokenCache}>
+			<KeyboardProvider>
+				<Layout />
+			</KeyboardProvider>
+		</ClerkProvider>
 	)
 }
 

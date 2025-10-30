@@ -1,4 +1,7 @@
 /** biome-ignore-all lint/style/noCommonJs: <rn allowed require> */
+
+import { useSSO } from '@clerk/clerk-expo'
+import { OAuthStrategy } from '@clerk/types'
 import AntDesign from '@expo/vector-icons/AntDesign'
 import { Link, Redirect } from 'expo-router'
 import * as WebBrowser from 'expo-web-browser'
@@ -16,11 +19,35 @@ import { COLORS } from '@/utils/Colors'
 const Page = () => {
 	// return <Redirect href={'/(tabs)/saves'} />
 
+	const { startSSOFlow } = useSSO()
+
 	const openLink = () => {
 		WebBrowser.openBrowserAsync('https://fgbyte.com')
 	}
 
-	const handleSocialLogin = (provider: string) => {}
+	const handleSocialLogin = async (provider: string) => {
+		try {
+			const { createdSessionId, setActive, signIn, signUp } =
+				await startSSOFlow({
+					strategy: provider as OAuthStrategy,
+				})
+
+			if (createdSessionId) {
+				setActive?.({
+					session: createdSessionId,
+					navigate: async ({ session }) => {
+						console.log('NAVIGATE INSIDE')
+					},
+				})
+			} else {
+				// If there is no `createdSessionId`,
+				// there are missing requirements, such as MFA
+				// See https://clerk.com/docs/guides/development/custom-flows/authentication/oauth-connections#handle-missing-requirements
+			}
+		} catch (err) {
+			console.error(err)
+		}
+	}
 	return (
 		<KeyboardAwareScrollView style={styles.container} bottomOffset={60}>
 			<View style={styles.header}>
