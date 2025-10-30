@@ -31,6 +31,7 @@ const getAppName = () => {
 const getPlugins = (): ExpoConfig['plugins'] => {
 	const plugins: ExpoConfig['plugins'] = [
 		['expo-router'],
+		'expo-secure-store',
 		['expo-splash-screen'],
 		'expo-font',
 		['expo-dynamic-app-icon'],

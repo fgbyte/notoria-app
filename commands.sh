@@ -2,7 +2,7 @@ bunx create-expo pocket-app --template default@next
 bunx expo install expo-dev-client # need dev build
 bunx expo install react-native-keyboard-controller # need dev build
 
-bun install @clerk/clerk-expo expo-secure-store
+bunx expo install @clerk/clerk-expo expo-secure-store expo-auth-session # need dev build
 bunx expo install fast-xml-parser
 
 
