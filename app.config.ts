@@ -34,7 +34,6 @@ const getPlugins = (): ExpoConfig['plugins'] => {
 		'expo-secure-store',
 		['expo-splash-screen'],
 		'expo-font',
-		['expo-dynamic-app-icon'],
 		'expo-web-browser',
 		'expo-sqlite',
 	] //add more plugins here for production purposes
