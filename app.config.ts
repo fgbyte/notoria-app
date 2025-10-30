@@ -48,7 +48,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
 	name: getAppName(),
 	slug: `${APP_NAME.toLowerCase()}`,
 	newArchEnabled: true,
-	version: '1.0.0', //👈 version control
+	version: '1.1.0', //👈 version control
 	orientation: 'portrait',
 	icon: './assets/images/icon.png',
 	scheme: 'notoria',
