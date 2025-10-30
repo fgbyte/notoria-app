@@ -1,6 +1,7 @@
-/** biome-ignore-all lint/style/noCommonJs: <rn is allowed require> */
+/** biome-ignore-all lint/style/noCommonJs: <rn allowed require> */
 import AntDesign from '@expo/vector-icons/AntDesign'
 import { Link, Redirect } from 'expo-router'
+import * as WebBrowser from 'expo-web-browser'
 import {
 	Image,
 	StyleSheet,
@@ -9,15 +10,19 @@ import {
 	TouchableOpacity,
 	View,
 } from 'react-native'
-import { KeyboardAvoidingView } from 'react-native-keyboard-controller'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-controller'
 import { COLORS } from '@/utils/Colors'
 
 const Page = () => {
 	// return <Redirect href={'/(tabs)/saves'} />
 
+	const openLink = () => {
+		WebBrowser.openBrowserAsync('https://fgbyte.com')
+	}
+
 	const handleSocialLogin = (provider: string) => {}
 	return (
-		<KeyboardAvoidingView behavior='padding' style={styles.container}>
+		<KeyboardAwareScrollView style={styles.container} bottomOffset={60}>
 			<View style={styles.header}>
 				<View style={styles.logo}>
 					<Image
@@ -64,7 +69,7 @@ const Page = () => {
 				<TouchableOpacity style={styles.nextButton}>
 					<Text style={styles.nextButtonText}>Next</Text>
 				</TouchableOpacity>
-				<Link href={'/home'} asChild>
+				<Link href={'/home'} replace asChild>
 					<TouchableOpacity style={{ marginTop: 16, alignSelf: 'center' }}>
 						<Text style={{ color: COLORS.secondary, fontWeight: 'bold' }}>
 							Skip for now
@@ -72,7 +77,21 @@ const Page = () => {
 					</TouchableOpacity>
 				</Link>
 			</View>
-		</KeyboardAvoidingView>
+
+			<View style={styles.footer}>
+				<Text style={styles.termsText}>
+					By proceeding, you agree to:{'\n'}
+					Notoria's{' '}
+					<Text onPress={() => openLink()} style={styles.link}>
+						Terms of Service
+					</Text>{' '}
+					and{' '}
+					<Text onPress={() => openLink()} style={styles.link}>
+						Privacy Policy
+					</Text>
+				</Text>
+			</View>
+		</KeyboardAwareScrollView>
 	)
 }
 
@@ -150,6 +169,19 @@ const styles = StyleSheet.create({
 		color: COLORS.white,
 		fontSize: 16,
 		fontWeight: 'bold',
+	},
+	footer: {
+		marginTop: 20,
+	},
+	termsText: {
+		fontSize: 12,
+		color: COLORS.textGray,
+		textAlign: 'center',
+		lineHeight: 18,
+	},
+	link: {
+		color: COLORS.primary,
+		textDecorationLine: 'underline',
 	},
 })
 
