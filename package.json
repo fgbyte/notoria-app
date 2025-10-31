@@ -15,7 +15,8 @@
     "prebuild": "bunx expo prebuild --clean",
     "build-android-dev": "APP_VARIANT=development eas build --platform android --profile development --clear-cache",
     "build-android-prev": "APP_VARIANT=preview eas build --platform android --profile preview",
-    "build-android-prod": "eas build --platform android --profile production"
+    "build-android-prod": "eas build --platform android --profile production",
+    "clean": "rm -rf .expo node_modules/.cache && bun install"
   },
   "dependencies": {
     "@clerk/clerk-expo": "^2.17.3",
