@@ -61,13 +61,13 @@ const Page = () => {
 			</View>
 
 			<View style={styles.buttonSection}>
-				<TouchableOpacity
+				{/* <TouchableOpacity
 					style={styles.button}
 					onPress={() => handleSocialLogin('oauth_apple')}
 				>
 					<AntDesign name='apple' size={20} color={`#000`} />
 					<Text style={styles.buttonText}>Continue with Apple</Text>
-				</TouchableOpacity>
+				</TouchableOpacity> */}
 
 				<TouchableOpacity
 					style={styles.button}
