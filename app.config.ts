@@ -2,7 +2,7 @@ import type { ConfigContext, ExpoConfig } from '@expo/config'
 
 const APP_NAME = 'Notoria' // 👈 hardcode the app name here
 
-//estas deben estar en el .env.local
+//👇 must be in the .env.local
 const IS_DEV = process.env.APP_VARIANT! === 'development'
 const IS_PREVIEW = process.env.APP_VARIANT! === 'preview'
 
