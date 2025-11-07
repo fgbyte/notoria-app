@@ -12,7 +12,7 @@ import Animated, {
 import { COLORS } from '@/utils/Colors'
 
 export default function Home() {
-	const [isLoading, setIsLoading] = useState(true)
+	const [isLoading, setIsLoading] = useState(false)
 
 	const translateY1 = useSharedValue(0)
 	const translateY2 = useSharedValue(0)
