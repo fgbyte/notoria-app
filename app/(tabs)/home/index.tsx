@@ -9,6 +9,7 @@ import Animated, {
 	withSequence,
 	withTiming,
 } from 'react-native-reanimated'
+import ArticlesFeed from '@/components/articles-feed'
 import { COLORS } from '@/utils/Colors'
 
 export default function Home() {
@@ -53,26 +54,37 @@ export default function Home() {
 			translateY3.value = withTiming(0, { duration: 300 })
 		}
 	}, [isLoading, translateY3, translateY2, translateY1])
-	return (
-		<ScrollView
-			contentInsetAdjustmentBehavior='automatic'
-			contentContainerStyle={styles.container}
-		>
-			<View style={styles.container}>
-				<View style={styles.loadingContainer}>
-					<View style={styles.loadingShapes}>
-						<Animated.View
-							style={[styles.shape, styles.circle, animatedStyle1]}
-						/>
-						<Animated.View style={[styles.triangle, animatedStyle2]} />
-						<Animated.View
-							style={[styles.shape, styles.square, animatedStyle3]}
-						/>
+
+	if (isLoading) {
+		return (
+			<ScrollView
+				contentInsetAdjustmentBehavior='automatic'
+				contentContainerStyle={styles.container}
+			>
+				<View style={styles.container}>
+					<View style={styles.loadingContainer}>
+						<View style={styles.loadingShapes}>
+							<Animated.View
+								style={[styles.shape, styles.circle, animatedStyle1]}
+							/>
+							<Animated.View style={[styles.triangle, animatedStyle2]} />
+							<Animated.View
+								style={[styles.shape, styles.square, animatedStyle3]}
+							/>
+						</View>
+						<Text style={styles.loadingText}>Loading...</Text>
 					</View>
-					<Text style={styles.loadingText}>Loading...</Text>
 				</View>
-			</View>
-		</ScrollView>
+			</ScrollView>
+		)
+	}
+
+	return (
+		<ArticlesFeed
+			maxItems={15}
+			feedSource='react-native'
+			title='React Native Articles'
+		/>
 	)
 }
 

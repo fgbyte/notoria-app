@@ -1,2 +1,4 @@
 //test the rss-feed endpoint
-http://localhost:8081/api/rss-feed
+
+
+http://localhost:8081/api/rss-feed?url=react-native
