@@ -36,7 +36,8 @@ const Page = () => {
 				setActive?.({
 					session: createdSessionId,
 					navigate: async ({ session }) => {
-						console.log('NAVIGATE INSIDE')
+						// console.log('NAVIGATE INSIDE')
+						//add business logic here
 					},
 				})
 			} else {

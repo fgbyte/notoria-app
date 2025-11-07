@@ -1,13 +1,17 @@
-import { ClerkProvider } from '@clerk/clerk-expo'
+import { ClerkProvider, useAuth } from '@clerk/clerk-expo'
 import { tokenCache } from '@clerk/clerk-expo/token-cache'
-import { Stack } from 'expo-router'
-import { Text, View } from 'react-native'
+import { Redirect, Stack } from 'expo-router'
 import { KeyboardProvider } from 'react-native-keyboard-controller'
 
 const Layout = () => {
+	const { isSignedIn } = useAuth()
+
 	return (
 		<Stack>
-			<Stack.Screen name='index' options={{ headerShown: false }} />
+			<Stack.Protected guard={!isSignedIn}>
+				<Stack.Screen name='index' options={{ headerShown: false }} />
+			</Stack.Protected>
+
 			<Stack.Screen name='(tabs)' options={{ headerShown: false }} />
 		</Stack>
 	)
