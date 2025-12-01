@@ -2,7 +2,7 @@ import { ClerkProvider, useAuth } from '@clerk/clerk-expo'
 import { tokenCache } from '@clerk/clerk-expo/token-cache'
 import { Redirect, Stack } from 'expo-router'
 import { KeyboardProvider } from 'react-native-keyboard-controller'
-import './global.css'
+import '../global.css'
 
 const Layout = () => {
 	const { isSignedIn } = useAuth()

@@ -58,7 +58,9 @@ const Page = () => {
 						style={styles.logoIcon}
 					/>
 				</View>
-				<Text style={styles.title}>Log In</Text>
+				<Text className='text-lg text-red-500' style={styles.title}>
+					Log In
+				</Text>
 			</View>
 
 			<View style={styles.buttonSection}>
@@ -109,7 +111,7 @@ const Page = () => {
 			<View style={styles.footer}>
 				<Text style={styles.termsText}>
 					By proceeding, you agree to:{'\n'}
-					Notoria's{' '}
+					Notoria&apos;s{' '}
 					<Text onPress={() => openLink()} style={styles.link}>
 						Terms of Service
 					</Text>{' '}
@@ -127,7 +129,8 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: COLORS.white,
-		paddingHorizontal: 30,
+		paddingLeft: 30,
+		paddingRight: 30,
 		paddingTop: 80,
 	},
 	header: {
@@ -152,7 +155,8 @@ const styles = StyleSheet.create({
 	button: {
 		borderWidth: 1,
 		borderRadius: 8,
-		paddingVertical: 16,
+		paddingTop: 16,
+		paddingBottom: 16,
 		flexDirection: 'row',
 		alignItems: 'center',
 		justifyContent: 'center',
@@ -162,7 +166,8 @@ const styles = StyleSheet.create({
 	divider: {
 		flexDirection: 'row',
 		alignItems: 'center',
-		marginVertical: 30,
+		marginTop: 30,
+		marginBottom: 30,
 		gap: 8,
 	},
 	line: {
@@ -181,15 +186,18 @@ const styles = StyleSheet.create({
 		borderWidth: 2,
 		borderColor: COLORS.primary,
 		borderRadius: 8,
-		paddingVertical: 16,
-		paddingHorizontal: 16,
+		paddingTop: 16,
+		paddingBottom: 16,
+		paddingLeft: 16,
+		paddingRight: 16,
 		fontSize: 16,
 		marginBottom: 16,
 	},
 	nextButton: {
 		backgroundColor: COLORS.secondary,
 		borderRadius: 8,
-		paddingVertical: 16,
+		paddingTop: 16,
+		paddingBottom: 16,
 		alignItems: 'center',
 		justifyContent: 'center',
 	},
