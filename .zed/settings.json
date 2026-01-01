@@ -1,0 +1,74 @@
+{
+  "formatter": "auto",
+  "languages": {
+    "JavaScript": {
+      "formatter": "language_server",
+      "language_servers": ["biome", "typescript-language-server", "codebook"],
+    },
+    "TypeScript": {
+      "formatter": "language_server",
+      "language_servers": ["biome", "typescript-language-server", "codebook"],
+    },
+    "TSX": {
+      "formatter": "language_server",
+      "language_servers": ["biome", "typescript-language-server", "codebook"],
+    },
+    "CSS": {
+      "formatter": "language_server",
+      "language_servers": ["biome", "codebook"],
+    },
+  },
+  "lsp": {
+    "biome": {
+      "initialization_options": {
+        "organizeImports": true,
+      },
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "classAttributes": [
+          "class",
+          "className",
+          "headerClassName",
+          "contentContainerClassName",
+          "columnWrapperClassName",
+          "endFillColorClassName",
+          "imageClassName",
+          "tintColorClassName",
+          "ios_backgroundColorClassName",
+          "thumbColorClassName",
+          "trackColorOnClassName",
+          "trackColorOffClassName",
+          "selectionColorClassName",
+          "cursorColorClassName",
+          "underlineColorAndroidClassName",
+          "placeholderTextColorClassName",
+          "selectionHandleColorClassName",
+          "colorsClassName",
+          "progressBackgroundColorClassName",
+          "titleColorClassName",
+          "underlayColorClassName",
+          "colorClassName",
+          "drawerBackgroundColorClassName",
+          "statusBarBackgroundColorClassName",
+          "backdropColorClassName",
+          "backgroundColorClassName",
+          "ListFooterComponentClassName",
+          "ListHeaderComponentClassName",
+        ],
+        "classFunctions": ["useResolveClassNames"],
+      },
+    },
+  },
+  "code_actions_on_format": {
+    "source.fixAll.biome": true,
+    "source.organizeImports.biome": true,
+  },
+  "format_on_save": "on",
+  "soft_wrap": "preferred_line_length",
+  "preferred_line_length": 80,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+}
