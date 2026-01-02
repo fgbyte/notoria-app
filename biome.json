@@ -1,10 +1,15 @@
 {
-	"formatter": { "enabled": true, "formatWithErrors": false },
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
 			"recommended": false,
-			"a11y": { "useButtonType": "off" },
+			"a11y": {
+				"useButtonType": "off"
+			},
 			"correctness": {
 				"noChildrenProp": "error",
 				"noEmptyCharacterClassInRegex": "warn",
@@ -16,7 +21,9 @@
 				"noUnusedVariables": {
 					"level": "warn",
 					"fix": "none",
-					"options": { "ignoreRestSiblings": false }
+					"options": {
+						"ignoreRestSiblings": false
+					}
 				},
 				"useExhaustiveDependencies": "warn",
 				"useHookAtTopLevel": "error",
@@ -24,8 +31,12 @@
 				"useJsxKeyInIterable": "error",
 				"useValidTypeof": "error"
 			},
-			"security": { "noDangerouslySetInnerHtmlWithChildren": "error" },
-			"style": { "noNonNullAssertion": "off" },
+			"security": {
+				"noDangerouslySetInnerHtmlWithChildren": "error"
+			},
+			"style": {
+				"noNonNullAssertion": "off"
+			},
 			"suspicious": {
 				"noCommentText": "error",
 				"noDoubleEquals": "warn",
@@ -40,7 +51,11 @@
 				"noWith": "warn"
 			}
 		},
-		"includes": ["**", "!android/app/build", "!dist/*"]
+		"includes": [
+			"**",
+			"!android/app/build",
+			"!dist/*"
+		]
 	},
 	"javascript": {
 		"formatter": {
@@ -179,18 +194,44 @@
 		]
 	},
 	"overrides": [
-		{ "includes": ["**/*.d.ts"], "linter": { "rules": {} } },
 		{
-			"includes": ["**/metro.config.js"],
-			"javascript": { "globals": ["exports"] }
+			"includes": [
+				"**/*.d.ts"
+			],
+			"linter": {
+				"rules": {}
+			}
 		},
-		{ "includes": ["**/*.js", "**/*.jsx"] },
 		{
-			"includes": ["**/*.ts", "**/*.tsx", "**/*.d.ts"],
-			"javascript": { "globals": [] },
+			"includes": [
+				"**/metro.config.js"
+			],
+			"javascript": {
+				"globals": [
+					"exports"
+				]
+			}
+		},
+		{
+			"includes": [
+				"**/*.js",
+				"**/*.jsx"
+			]
+		},
+		{
+			"includes": [
+				"**/*.ts",
+				"**/*.tsx",
+				"**/*.d.ts"
+			],
+			"javascript": {
+				"globals": []
+			},
 			"linter": {
 				"rules": {
-					"complexity": { "noUselessConstructor": "warn" },
+					"complexity": {
+						"noUselessConstructor": "warn"
+					},
 					"correctness": {
 						"noUndeclaredVariables": "off",
 						"noUnusedVariables": "warn"
@@ -199,7 +240,9 @@
 						"noCommonJs": "warn",
 						"useConsistentArrayType": {
 							"level": "warn",
-							"options": { "syntax": "shorthand" }
+							"options": {
+								"syntax": "shorthand"
+							}
 						}
 					},
 					"suspicious": {
@@ -210,6 +253,15 @@
 				}
 			}
 		},
-		{ "includes": ["*.web.*"] }
-	]
+		{
+			"includes": [
+				"*.web.*"
+			]
+		}
+	],
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	}
 }

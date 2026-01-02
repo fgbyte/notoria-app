@@ -1,2 +1,20 @@
 @import "tailwindcss";
 @import "uniwind";
+
+@theme {
+	/* Define tus colores personalizados */
+	--color-background: #1a1a1a;
+	--color-text: #ffe81f;
+	--color-inactive: #888888;
+	--color-itemBackground: #f1f1f1;
+	--color-containerBackground: #222222;
+
+	--color-white: #fff;
+	--color-primary: #008179;
+	--color-secondary: #4a90e2;
+	--color-textDark: #333;
+	--color-textGray: #666;
+	--color-textLight: #999;
+	--color-border: #ddd;
+	--color-red: #b74414;
+}

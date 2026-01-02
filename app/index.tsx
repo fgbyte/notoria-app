@@ -58,9 +58,7 @@ const Page = () => {
 						style={styles.logoIcon}
 					/>
 				</View>
-				<Text className='text-lg text-red-500' style={styles.title}>
-					Log In
-				</Text>
+				<Text style={styles.title}>Log In</Text>
 			</View>
 
 			<View style={styles.buttonSection}>
@@ -101,9 +99,7 @@ const Page = () => {
 				</TouchableOpacity>
 				<Link href={'/home'} replace asChild>
 					<TouchableOpacity style={{ marginTop: 16, alignSelf: 'center' }}>
-						<Text style={{ color: COLORS.secondary, fontWeight: 'bold' }}>
-							Skip for now
-						</Text>
+						<Text className='text-secondary font-bold'>Skip for now</Text>
 					</TouchableOpacity>
 				</Link>
 			</View>
@@ -148,7 +144,7 @@ const styles = StyleSheet.create({
 	title: {
 		fontSize: 42,
 		fontWeight: 'bold',
-		// color: COLORS.textDark,
+		color: COLORS.textDark,
 	},
 	buttonSection: { gap: 12 },
 	buttonText: { fontSize: 16 },
